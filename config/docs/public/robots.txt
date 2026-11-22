@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lanbingyue1.github.io/cure-script-zh/sitemap.xml

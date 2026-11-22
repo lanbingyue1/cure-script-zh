@@ -7,6 +7,10 @@ export default defineConfig({
   description: "in markdown",
   srcDir: 'docs',
   base: process.env.VITE_BASE_URL || '/',
+  sitemap: {
+    // 生成 sitemap.xml，方便搜索引擎发现 /zh/ 下的全部课程页。
+    hostname: 'https://lanbingyue1.github.io/cure-script-zh/'
+  },
   ignoreDeadLinks: true,
   rewrites: {
     'en/:rest*': ':rest*'
@@ -15,6 +19,8 @@ export default defineConfig({
     root: {
       label: 'English',
       lang: 'en',
+      title: 'Cure Dolly Grammar Guide',
+      description: 'The complete Cure Dolly Japanese grammar course, readable online or as a downloadable EPUB.',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
@@ -26,6 +32,8 @@ export default defineConfig({
     ru: {
       label: 'Russian',
       lang: 'ru',
+      title: 'Cure Dolly — руководство по японской грамматике',
+      description: 'Полный курс японской грамматики Cure Dolly: для чтения онлайн и в виде EPUB.',
       themeConfig: {
         nav: [
           { text: 'Главная', link: '/ru/' },
@@ -37,6 +45,8 @@ export default defineConfig({
     zh: {
       label: 'Chinese',
       lang: 'zh-CN',
+      title: 'Cure Dolly 日语语法指南',
+      description: 'Cure Dolly 日语语法课程完整中文译本：可在线阅读，也可下载 EPUB 离线阅读。',
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
@@ -91,6 +101,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:title', content: 'Cure Dolly Grammar guide' } ],
     ['meta', { name: 'twitter:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' } ],
     ['meta', { name: 'twitter:image', content: '/cure-script-zh/og.png' } ],
+    ['link', { rel: 'sitemap', type: 'application/xml', href: '/cure-script-zh/sitemap.xml' }],
     /* 站点根 `/` 是英文 locale（上游设计），中文在 `/zh/`。
        这里让「中文浏览器首次直达根路径」自动跳到中文站：
          - 仅对根路径生效（/zh/、/ru/、各课程页不受影响）
