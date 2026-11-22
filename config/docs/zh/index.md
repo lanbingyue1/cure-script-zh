@@ -16,7 +16,7 @@ hero:
       link: /zh/about
     - theme: alt
       text: 下载 EPUB
-      link: https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub
+      link: https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub
 
 
 ---

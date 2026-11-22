@@ -7,7 +7,7 @@
 离线 EPUB 阅读支持和生成功能由 [coffeepebble](https://github.com/coffeepebble) 构建。
 
 ::: tip 离线阅读
-你可以把整门课程作为 EPUB 电子书下载到阅读器和手机上：[**下载 EPUB**](https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub)。
+你可以把整门课程作为 EPUB 电子书下载到阅读器和手机上：[**下载 EPUB**](https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub)。
 :::
 
 ## 改动了什么

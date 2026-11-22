@@ -1,6 +1,6 @@
 [中文](README.md)
 
-**[Read from 1st lesson Online](https://lanbingyue1.github.io/cure-script/1-the-basic-types-of-sentences.html)** &nbsp;&nbsp;&nbsp;&nbsp; **[Download for Offline reading (EPUB)](https://github.com/lanbingyue1/cure-script/releases/latest)**
+**[Read from 1st lesson Online](https://lanbingyue1.github.io/cure-script-zh/1-the-basic-types-of-sentences.html)** &nbsp;&nbsp;&nbsp;&nbsp; **[Download for Offline reading (EPUB)](https://github.com/lanbingyue1/cure-script-zh/releases/latest)**
 
 # Intro
 
@@ -12,10 +12,10 @@ Offline EPUB reading support and generation was built by [coffeepebble](https://
 
 <img src="https://i.imgur.com/YOWRijj.png">
 
-The full transcript is available as EPUBs in [releases](https://github.com/lanbingyue1/cure-script/releases/). You can also (modify the material and) build locally:
+The full transcript is available as EPUBs in [releases](https://github.com/lanbingyue1/cure-script-zh/releases/). You can also (modify the material and) build locally:
 
 ```sh
-git clone https://github.com/lanbingyue1/cure-script
+git clone https://github.com/lanbingyue1/cure-script-zh
 brew install pandoc
 chmod 755 epublish
 ./epublish

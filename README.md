@@ -1,6 +1,6 @@
 [English](README.en.md)
 
-**[在线阅读（中文站）](https://lanbingyue1.github.io/cure-script/zh/)** &nbsp;&nbsp;&nbsp;&nbsp; **[下载 EPUB（离线阅读）](https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub)**
+**[在线阅读（中文站）](https://lanbingyue1.github.io/cure-script-zh/zh/)** &nbsp;&nbsp;&nbsp;&nbsp; **[下载 EPUB（离线阅读）](https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub)**
 
 # 简介
 
@@ -8,15 +8,15 @@
 
 原项目把 Cure Dolly 的日语教学视频转录稿转成 Markdown，用 [VitePress](https://vitepress.dev/) 发布成网页版，并用 pandoc 生成 EPUB。转录稿由 Mordraug 和 Nunko 花了大量时间完成，并分享在[这个 Google Docs](https://docs.google.com/document/d/1XpuXerkGU8waJ4DPDNJA4bGeqOvM-csXjTe57iHARHc/) 里；[Kellen（Kellenok）](https://bento.me/kln)把脚本转成 Markdown、调整了格式并发布；离线 EPUB 的阅读支持与生成由 [coffeepebble](https://github.com/coffeepebble) 构建。
 
-本中文版在原项目的基础上新增了完整的中文翻译，并在网站上提供中文入口（`/zh/`）。如果你想看英文原版，请访问 [README.en.md](README.en.md) 或[在线英文站](https://lanbingyue1.github.io/cure-script/)。
+本中文版在原项目的基础上新增了完整的中文翻译，并在网站上提供中文入口（`/zh/`）。如果你想看英文原版，请访问 [README.en.md](README.en.md) 或[在线英文站](https://lanbingyue1.github.io/cure-script-zh/)。
 
 <img src="https://i.imgur.com/YOWRijj.png">
 
 ## 在线阅读与下载
 
-- **在线（中文）**：<https://lanbingyue1.github.io/cure-script/zh/> —— 从[第 1 课](https://lanbingyue1.github.io/cure-script/zh/1-句子的基本类型.html)开始读。
-- **在线（英文）**：<https://lanbingyue1.github.io/cure-script/>，**在线（俄文）**：<https://lanbingyue1.github.io/cure-script/ru/>。
-- **离线 EPUB（中文）**：[下载 cure-dolly-zh.epub](https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub)。全部版本见 [releases](https://github.com/lanbingyue1/cure-script/releases/)。
+- **在线（中文）**：<https://lanbingyue1.github.io/cure-script-zh/zh/> —— 从[第 1 课](https://lanbingyue1.github.io/cure-script-zh/zh/1-句子的基本类型.html)开始读。
+- **在线（英文）**：<https://lanbingyue1.github.io/cure-script-zh/>，**在线（俄文）**：<https://lanbingyue1.github.io/cure-script-zh/ru/>。
+- **离线 EPUB（中文）**：[下载 cure-dolly-zh.epub](https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub)。全部版本见 [releases](https://github.com/lanbingyue1/cure-script-zh/releases/)。
 
 ## 相对原版改了什么
 
@@ -28,15 +28,15 @@
 4. **EPUB 生成**：`epublish` 增加 `-V lang`（`zh` → `zh-CN`）与中文书名 / 描述，并把 `dc:language` 统一为译本语言；`config/stylesheet.css` 增加中文（CJK）字体栈，且只作用于 `html[lang^="zh"]`，不影响英文 / 俄文版。
 5. **中文课程文件名**：把课程文件名改为中文（英文标题译为中文，日文部分保留）。
 
-> 原项目本身相对转录稿的改动（下划线改加粗、引号改着色 `highlighted`、注释改专用容器、课程分组、合并段落等）沿用不变，详见[中文版简介](https://lanbingyue1.github.io/cure-script/zh/about)。
+> 原项目本身相对转录稿的改动（下划线改加粗、引号改着色 `highlighted`、注释改专用容器、课程分组、合并段落等）沿用不变，详见[中文版简介](https://lanbingyue1.github.io/cure-script-zh/zh/about)。
 
 ## 本地构建
 
 需要先安装 [Node.js](https://nodejs.org/)（构建网站）与 [pandoc](https://pandoc.org/)（生成 EPUB）。
 
 ```sh
-git clone https://github.com/lanbingyue1/cure-script
-cd cure-script
+git clone https://github.com/lanbingyue1/cure-script-zh
+cd cure-script-zh
 
 # 构建 / 预览网页版
 npm install

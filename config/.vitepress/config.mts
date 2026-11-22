@@ -41,7 +41,7 @@ export default defineConfig({
         nav: [
           { text: '首页', link: '/zh/' },
           { text: '关于', link: '/zh/about' },
-          { text: '下载 EPUB', link: 'https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub' }
+          { text: '下载 EPUB', link: 'https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub' }
         ]
       }
     }
@@ -67,7 +67,7 @@ export default defineConfig({
     ],
     [
       'link',
-      { rel: 'icon', href: '/cure-script/favicon.ico' }
+      { rel: 'icon', href: '/cure-script-zh/favicon.ico' }
     ],
     [
       'link',
@@ -75,23 +75,23 @@ export default defineConfig({
     ],
     ['meta', { name: 'og:title', content: "Cure Dolly Grammar guide" }],
     ['meta', { property: 'og:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' }],
-    ['meta', { property: 'og:image', content: '/cure-script/og.png' }],
+    ['meta', { property: 'og:image', content: '/cure-script-zh/og.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://lanbingyue1.github.io/cure-script' }],
-    ['meta', { name: 'twitter:url', content: 'https://lanbingyue1.github.io/cure-script' }],
+    ['meta', { property: 'og:url', content: 'https://lanbingyue1.github.io/cure-script-zh' }],
+    ['meta', { name: 'twitter:url', content: 'https://lanbingyue1.github.io/cure-script-zh' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' } ],
     ['meta', { name: 'twitter:title', content: 'Cure Dolly Grammar guide' } ],
     ['meta', { name: 'twitter:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' } ],
-    ['meta', { name: 'twitter:image', content: '/cure-script/og.png' } ],
+    ['meta', { name: 'twitter:image', content: '/cure-script-zh/og.png' } ],
   ],
 
   themeConfig: {
     sidebar: sidebar,
     editLink: {
-      pattern: 'https://github.com/lanbingyue1/cure-script/edit/main/config/docs/:path'
+      pattern: 'https://github.com/lanbingyue1/cure-script-zh/edit/main/config/docs/:path'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lanbingyue1/cure-script' }
+      { icon: 'github', link: 'https://github.com/lanbingyue1/cure-script-zh' }
     ],
     search: {
       provider: 'local',
