@@ -33,6 +33,17 @@ export default defineConfig({
           { text: 'Скачать EPUB', link: 'https://github.com/Kellenok/cure-script/releases/latest/download/cure-dolly-ru.epub' }
         ]
       }
+    },
+    zh: {
+      label: 'Chinese',
+      lang: 'zh-CN',
+      themeConfig: {
+        nav: [
+          { text: '首页', link: '/zh/' },
+          { text: '关于', link: '/zh/about' },
+          { text: '下载 EPUB', link: 'https://github.com/lanbingyue1/cure-script/releases/latest/download/cure-dolly-zh.epub' }
+        ]
+      }
     }
   },
 
@@ -66,8 +77,8 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' }],
     ['meta', { property: 'og:image', content: '/cure-script/og.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://kellenok.github.io/cure-script' }],
-    ['meta', { name: 'twitter:url', content: 'https://kellenok.github.io/cure-script' }],
+    ['meta', { property: 'og:url', content: 'https://lanbingyue1.github.io/cure-script' }],
+    ['meta', { name: 'twitter:url', content: 'https://lanbingyue1.github.io/cure-script' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' } ],
     ['meta', { name: 'twitter:title', content: 'Cure Dolly Grammar guide' } ],
     ['meta', { name: 'twitter:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' } ],
@@ -77,13 +88,44 @@ export default defineConfig({
   themeConfig: {
     sidebar: sidebar,
     editLink: {
-      pattern: 'https://github.com/Kellenok/cure-script/edit/main/config/docs/:path'
+      pattern: 'https://github.com/lanbingyue1/cure-script/edit/main/config/docs/:path'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Kellenok/cure-script' }
+      { icon: 'github', link: 'https://github.com/lanbingyue1/cure-script' }
     ],
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        miniSearch: {
+          // 让中文可检索：minisearch 默认按空白/标点切词，中文整句会变成一个 token，
+          // 导致中文查询 0 命中。这里在默认切分的基础上，把 CJK 连续串再拆成单字；
+          // 英文/俄文仍按空格切分，行为不变。
+          options: {
+            tokenize: (text: string) => {
+              const isCJK = (ch: string) =>
+                /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/.test(ch);
+              return text
+                .toLowerCase()
+                .split(/[\n\r\p{Z}\p{P}\p{S}]+/u)
+                .flatMap((seg) => {
+                  if (!seg) return [] as string[];
+                  const tokens: string[] = [];
+                  let buf = '';
+                  for (const ch of seg) {
+                    if (isCJK(ch)) {
+                      if (buf) { tokens.push(buf); buf = ''; }
+                      tokens.push(ch);
+                    } else {
+                      buf += ch;
+                    }
+                  }
+                  if (buf) tokens.push(buf);
+                  return tokens;
+                });
+            }
+          }
+        }
+      }
     },
     nav: [
       { text: 'Home', link: '/' },

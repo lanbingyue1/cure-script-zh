@@ -5,13 +5,22 @@ for dir in config/docs/*/; do
   lang=$(basename "$dir")
   ref=""
   [ "$lang" = "en" ] || ref=" ($lang)"
+  # 译本语言：zh → zh-CN。pandoc 用它同时写 <package xml:lang>、<html lang> 与 <dc:language>。
+  # 注意：--epub-metadata 里的 dc:language 会覆盖 -V lang，且 pandoc 只保留一个 dc:language，
+  # 所以这里不再单列 ja，统一用译本语言。
+  epub_lang="$lang"
+  if [ "$lang" = "zh" ]; then epub_lang="zh-CN"; fi
   echo "Binding $lang book... [ctrl+c to skip]"
   metadata_file="${TMPDIR:-/tmp}/epub-tags-$lang.xml"
   {
-    echo "<dc:title>Cure Dolly Transcript$ref</dc:title>"
-    echo "<dc:description>Hello, everyone. My name is Cure Dolly and I am here to teach you Organic Japanese. What is Organic Japanese? It is Japanese pure and simple, with no harmful additives. Japanese is the simplest, most logical, most easily understandable language I have ever encountered – much easier than Western languages.</dc:description>"
-    echo "<dc:language>ja</dc:language>"
-    echo "<dc:language>$lang</dc:language>"
+    if [ "$lang" = "zh" ]; then
+      echo "<dc:title>Cure Dolly 讲义（中文）</dc:title>"
+      echo "<dc:description>用有机日语的方法讲清日语语法结构的中文译本。</dc:description>"
+    else
+      echo "<dc:title>Cure Dolly Transcript$ref</dc:title>"
+      echo "<dc:description>Hello, everyone. My name is Cure Dolly and I am here to teach you Organic Japanese. What is Organic Japanese? It is Japanese pure and simple, with no harmful additives. Japanese is the simplest, most logical, most easily understandable language I have ever encountered – much easier than Western languages.</dc:description>"
+    fi
+    echo "<dc:language>$epub_lang</dc:language>"
     echo "<dc:creator>Cure Dolly</dc:creator>"
     echo "<dc:contributor>nunko</dc:contributor>"
     echo "<dc:contributor>Mordraug</dc:contributor>"
@@ -19,6 +28,6 @@ for dir in config/docs/*/; do
     echo "<dc:contributor>coffeepebble</dc:contributor>"
     echo "<dc:publisher>Organic Japanese with Cure Dolly</dc:publisher>"
   } >"$metadata_file"
-  find config/docs/"$lang" -name '*.md' | sort -V | xargs pandoc -f markdown+rebase_relative_paths+east_asian_line_breaks --toc --split-level=1 --epub-metadata="$metadata_file" --css=./config/stylesheet.css --lua-filter=./config/furigana.lua -o "cure-dolly-$lang.epub"
+  find config/docs/"$lang" -name '*.md' | sort -V | xargs pandoc -f markdown+rebase_relative_paths+east_asian_line_breaks --toc --split-level=1 -V "lang=$epub_lang" --epub-metadata="$metadata_file" --css=./config/stylesheet.css --lua-filter=./config/furigana.lua -o "cure-dolly-$lang.epub"
   rm -f "$metadata_file"
 done

@@ -5,6 +5,7 @@ on:
     # Daily at 12:00 UTC (15:00 MSK)
     - cron: '0 12 * * *'
   push:
+    branches: [main]
     tags:
       - 'v*'
   workflow_dispatch:

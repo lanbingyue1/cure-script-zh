@@ -242,3 +242,13 @@ rt {
   line-height: 1;
 }
 
+/* 中文版：等宽/衬线中文字体栈（属性选择器只命中 zh，不影响 en/ru） */
+html[lang^="zh"] {
+  font-family: "Noto Serif CJK SC", "Songti SC", "SimSun", "Microsoft YaHei", serif;
+}
+html[lang^="zh"] code,
+html[lang^="zh"] pre {
+  font-family: "Sarasa Mono SC", "Cascadia Mono", "Consolas", monospace;
+}
+
+
