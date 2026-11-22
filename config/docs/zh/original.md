@@ -1,7 +1,9 @@
 # By nunko/dinuz
 
-Basically finished. Transcript originally by [nunko](https://discordapp.com/users/367391904343523339)/dinuz, but it was passed to me.
-For feedback, tips, edit permissions or stuff I might have overseen or made unclear/inaccurate (mail [Mordraug](mailto:adokapus@gmail.com) or [モルドラウグ](mailto:mordraug666@gmail.com)), or just contact me on Discord [Mordraug (ID “morudoraugu”)](https://discord.com/users/501133947044888605).
+*（译者注：本页整篇为 transcription 原始说明，属 Kellen 之外的另一位转录者 Mordraug 所写，译文仅译出首段，下文仍保留英文原文。）*
+
+基本上已经完成。文字稿最初由 [nunko](https://discordapp.com/users/367391904343523339)/dinuz 转录，后来转交给了我。
+如需反馈、建议、编辑权限，或指出我可能漏掉、讲得不清、不准确的地方（可发邮件给 [Mordraug](mailto:adokapus@gmail.com) 或 [モルドラウグ](mailto:mordraug666@gmail.com)），或者在 Discord 上直接联系我 [Mordraug（ID “morudoraugu”）](https://discord.com/users/501133947044888605)。
 
 Since I am careful about bots/scams, I do not accept randoms, so you should also let me know either through a message / email or join [the MoeWay Discord](https://discord.gg/zf3QTdsD), so I know it is someone Japanese-related.
 

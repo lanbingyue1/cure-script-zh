@@ -897,7 +897,7 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           "link": "/zh/about"
         },
         {
-          "text": "By nunko/dinuz（英文原文）",
+          "text": "By nunko/dinuz（文字稿原始说明）",
           "link": "/zh/original"
         }
       ]

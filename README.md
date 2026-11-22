@@ -10,6 +10,8 @@
 
 本中文版在原项目的基础上新增了完整的中文翻译，并在网站上提供中文入口（`/zh/`）。如果你想看英文原版，请访问 [README.en.md](README.en.md) 或[在线英文站](https://lanbingyue1.github.io/cure-script-zh/)。
 
+> **译者注**：本译本的原作，是已故的 Cure Dolly（Organic Japanese with Cure Dolly）所讲授的日语课程；课程视频由 Mordraug、Nunko 转录成文字稿，[Kellen（Kellenok）](https://bento.me/kln) 再把它整理成 Markdown 并在上游项目上用 VitePress 发布。**上游项目本身并未标注开放许可**，因此本译本不另行声明许可，一切署名与使用条件均以上游为准，也**没有任何商业用途**。译稿不足之处，欢迎[提出意见或来信讨论](https://github.com/lanbingyue1/cure-script-zh/issues)。详见[中文版简介](https://lanbingyue1.github.io/cure-script-zh/zh/about)。
+
 <img src="https://i.imgur.com/YOWRijj.png">
 
 ## 在线阅读与下载
@@ -22,7 +24,7 @@
 
 相对原项目（英文版），本项目主要做了这些改动：
 
-1. **新增中文翻译**：在 `config/docs/zh/` 下新增 99 课正文，以及 `about`（简介）与 `index`（首页）。`original.md` 保留英文原文，不翻译。
+1. **新增中文翻译**：在 `config/docs/zh/` 下新增 99 篇课程正文，以及 `about`（简介）与 `index`（首页）。`original.md` 保留英文原文，不翻译（仅补一行说明与首段中译）。
 2. **站点接入**：在 `config/.vitepress/config.mts` 中增加 `zh` locale（`lang: zh-CN`）与中文导航；在 `config/.vitepress/sidebar.mts` 中增加 `/zh/` 侧边栏。
 3. **中文本地搜索**：覆盖 minisearch 的 `tokenize`，对 CJK 连续串逐字拆分。否则中文整句会被当成单个 token，中文查询会 0 命中；英文 / 俄文仍按空格切分，行为不变。
 4. **EPUB 生成**：`epublish` 增加 `-V lang`（`zh` → `zh-CN`）与中文书名 / 描述，并把 `dc:language` 统一为译本语言；`config/stylesheet.css` 增加中文（CJK）字体栈，且只作用于 `html[lang^="zh"]`，不影响英文 / 俄文版。

@@ -42,7 +42,11 @@ export default defineConfig({
           { text: '首页', link: '/zh/' },
           { text: '关于', link: '/zh/about' },
           { text: '下载 EPUB', link: 'https://github.com/lanbingyue1/cure-script-zh/releases/latest/download/cure-dolly-zh.epub' }
-        ]
+        ],
+        footer: {
+          message: '由 <a href="https://bento.me/kln">Kellen</a> 制作',
+          copyright: '原始文字稿由 <a href="https://docs.google.com/document/d/1XpuXerkGU8waJ4DPDNJA4bGeqOvM-csXjTe57iHARHc">nunko/dinuz</a> 转录。'
+        }
       }
     }
   },
