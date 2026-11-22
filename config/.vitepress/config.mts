@@ -87,6 +87,26 @@ export default defineConfig({
     ['meta', { name: 'twitter:title', content: 'Cure Dolly Grammar guide' } ],
     ['meta', { name: 'twitter:description', content: 'Enjoy the entire grammar guide in a easy-to-read web format' } ],
     ['meta', { name: 'twitter:image', content: '/cure-script-zh/og.png' } ],
+    /* 站点根 `/` 是英文 locale（上游设计），中文在 `/zh/`。
+       这里让「中文浏览器首次直达根路径」自动跳到中文站：
+         - 仅对根路径生效（/zh/、/ru/、各课程页不受影响）
+         - 若来源是站内（referrer 同源，例如点了语言切换器的 English），不跳转，
+           避免把主动选择英文的用户又弹回中文
+         - 非中文浏览器保持英文首页不变
+       en/ru 的文档零改动；仅作用于共享配置。 */
+    ['script', {}, `(function(){try{
+var base=${JSON.stringify(process.env.VITE_BASE_URL || '/')};
+if(base.charAt(base.length-1)!=='/')base+='/';
+var p=location.pathname;
+var rel=p.indexOf(base)===0?p.slice(base.length):p;
+if(rel.charAt(0)==='/')rel=rel.slice(1);
+if(rel!==''&&rel!=='index.html')return;
+var ref=document.referrer||'';
+if(ref.indexOf(location.origin)===0)return;
+var langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
+var pref=String(langs[0]||'').toLowerCase();
+if(pref.indexOf('zh')===0)location.replace(base+'zh/'+location.search+location.hash);
+}catch(e){}})();`],
   ],
 
   themeConfig: {
