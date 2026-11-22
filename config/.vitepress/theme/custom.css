@@ -3,6 +3,16 @@
     --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', 'Noto Sans JP',monospace;
   }
 
+/* 中文版：正文优先「简体中文」字体。
+   原栈把日文『Noto Sans JP』排在 CJK 首位，导致中文被渲染成日式字形
+   （如 直/骨/次/者 等共用汉字的日本变体），且简中特有字回退到其它
+   字体、字宽忽宽忽窄。这里为 zh 单独覆盖字体栈，只命中
+   <html lang="zh-CN">（VitePress 为 zh locale 自动设置），en/ru 不受影响。 */
+html[lang^="zh"] {
+  --vp-font-family-base: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans JP', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', 'Noto Sans SC', 'Noto Sans JP', monospace;
+}
+
 sup a {text-decoration:none!important}
 
 .vp-doc ruby > rt {
